@@ -40,6 +40,9 @@
             </v-carousel>
           </v-container>
         </v-main>
+        <v-footer padless>
+          <v-col class="text-center" cols="12" v-html="footerHTML"></v-col>
+        </v-footer>
       </v-app>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -79,6 +82,9 @@
           },
           currentSlides () {
             return this.slides
+          },
+          footerHTML () {
+            return `<a style="color: #fff; text-decoration: none;" href="https://github.com/revzim">${new Date().getFullYear()} — <strong>REVZIM</strong></a>`
           }
         },
         methods: {
