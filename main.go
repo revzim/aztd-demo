@@ -33,6 +33,7 @@ var (
 	Version = ""
 
 	AppVersions = map[string]string{
+		"v013b": "kgeu1w",
 		"v013a": "xs6kid",
 		"v012c": "2mhihr",
 		"v012b": "clrt9k",
