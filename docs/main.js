@@ -25924,7 +25924,7 @@ $packages["main"] = (function() {
 		$r = vue.$init(); /* */ $s = 3; case 3: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = strings.$init(); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = time.$init(); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		$pkg.AppVersions = $makeMap($String.keyFor, [{ k: "v012c", v: "2mhihr" }, { k: "v012b", v: "clrt9k" }, { k: "v012a", v: "l2a2vu" }, { k: "v011e", v: "clrt9k" }, { k: "v011d", v: "1uyyh4" }, { k: "v011c", v: "bzqbww" }, { k: "v011b", v: "s0xirg" }, { k: "v011a", v: "khhfux" }]);
+		$pkg.AppVersions = $makeMap($String.keyFor, [{ k: "v013a", v: "xs6kid" }, { k: "v012c", v: "2mhihr" }, { k: "v012b", v: "clrt9k" }, { k: "v012a", v: "l2a2vu" }, { k: "v011e", v: "clrt9k" }, { k: "v011d", v: "1uyyh4" }, { k: "v011c", v: "bzqbww" }, { k: "v011b", v: "s0xirg" }, { k: "v011a", v: "khhfux" }]);
 		$pkg.StreamableURL = "https://streamable.com/e";
 		$pkg.Slides = new sliceType(["PREV VERSION", "NEXT VERSION"]);
 		if ($pkg === $mainPkg) {
