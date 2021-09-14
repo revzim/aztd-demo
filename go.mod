@@ -1,5 +1,6 @@
 module github.com/revzim/tests/aztdvuetifysite
 
+// https://github.com/revzim/aztd-demo
 go 1.16
 
 replace github.com/revzim/gopherjs-vue => ./../../gopherjs-vue

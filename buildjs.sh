@@ -1,1 +1,1 @@
-gopherjs build main.go -o public/main.js
+gopherjs build main.go -o docs/main.js

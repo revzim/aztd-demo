@@ -1,6 +1,7 @@
 package main
 
 // revzim <https://github.com/revzim>
+// aztd - demo website
 
 import (
 	"fmt"

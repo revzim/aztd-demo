@@ -2,7 +2,8 @@
 ### server - Node/TypeScript
 ### client - Unreal Engine 4.26/C++
 
-# [VIDEO DEMOS WEBSITE BUILT W/ GOPHERJS VUE & VUETIFY](https://revzim.github.io/aztd-demo/)
+# [VIDEO DEMOS WEBSITE BUILT W/ GOLANG (GopherJS) VUE & VUETIFY](https://revzim.github.io/aztd-demo/)
+# [VIDEO DEMOS WEBSITE BUILT W/ JS VUE & VUETIFY](https://revzim.github.io/aztd-demo/justjs)
 
 ```
 - PC ISNT GREAT SO RECORDING STUTTERS A LITTLE DURING CERTAIN SWAPPING DUE TO RUNNING SEVERAL APPLICATIONS & PROGRAMS WHILE RECORDING
