@@ -29,6 +29,13 @@ type (
 	}
 )
 
+const (
+	VueAppMountElement = "#app"
+	AuthorGit          = "https://github.com/revzim"
+	FooterFormatString = `<a style="color: #fff; text-decoration: none;" target="_blank" href="%s">%s — <strong>REVZIM</strong></a>`
+	StreamableURL      = "https://streamable.com/e"
+)
+
 var (
 	AppVersions = map[string]string{
 		"v013b": "kgeu1w",
@@ -42,10 +49,6 @@ var (
 		"v011b": "s0xirg",
 		"v011a": "khhfux",
 	}
-
-	AuthorGit = "https://github.com/revzim"
-
-	StreamableURL = "https://streamable.com/e"
 
 	Slides = []string{"PREV VERSION", "NEXT VERSION"}
 )
@@ -101,8 +104,9 @@ func InitVueOpts(m *Model) *vue.Option {
 
 	o.AddComputed("footerHTML", func(vm *vue.ViewModel) interface{} {
 		return fmt.Sprintf(
-			`<a style="color: #fff; text-decoration: none;" target="_blank" href="%s">%s — <strong>REVZIM</strong></a>`,
-			vm.Data.Get("authorgit").String(), time.Now().Format("Mon Jan _2 2006"),
+			FooterFormatString,
+			vm.Data.Get("authorgit").String(),
+			time.Now().Format("Mon Jan _2 2006"),
 		)
 	})
 
@@ -117,7 +121,7 @@ func main() {
 	m := &Model{
 		Object: js.Global.Get("Object").New(),
 	}
-	m.MountEl = "#app"
+	m.MountEl = VueAppMountElement
 	m.Version = ""
 	m.Versions = AppVersions
 	m.VersionIdx = 0
@@ -140,5 +144,5 @@ func main() {
 
 	v.Object.Set("vuetify", m.Vuetify)
 
-	v.Mount("#app")
+	v.Mount(VueAppMountElement)
 }

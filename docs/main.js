@@ -25900,8 +25900,8 @@ $packages["main"] = (function() {
 		m.Object.versionIdx = 0;
 		m.Object.versionKeys = $externalize($makeSlice(sliceType, 0), sliceType);
 		m.Object.slides = $externalize($pkg.Slides, sliceType);
-		m.Object.authorgit = $externalize($pkg.AuthorGit, $String);
-		m.Object.streamable = $externalize($pkg.StreamableURL, $String);
+		m.Object.authorgit = $externalize("https://github.com/revzim", $String);
+		m.Object.streamable = $externalize("https://streamable.com/e", $String);
 		_ref = $internalize(m.Object.versions, mapType);
 		_i = 0;
 		_keys = $keys(_ref);
@@ -25937,8 +25937,6 @@ $packages["main"] = (function() {
 		$r = strings.$init(); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = time.$init(); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$pkg.AppVersions = $makeMap($String.keyFor, [{ k: "v013b", v: "kgeu1w" }, { k: "v013a", v: "xs6kid" }, { k: "v012c", v: "2mhihr" }, { k: "v012b", v: "clrt9k" }, { k: "v012a", v: "l2a2vu" }, { k: "v011e", v: "clrt9k" }, { k: "v011d", v: "1uyyh4" }, { k: "v011c", v: "bzqbww" }, { k: "v011b", v: "s0xirg" }, { k: "v011a", v: "khhfux" }]);
-		$pkg.AuthorGit = "https://github.com/revzim";
-		$pkg.StreamableURL = "https://streamable.com/e";
 		$pkg.Slides = new sliceType(["PREV VERSION", "NEXT VERSION"]);
 		/* */ if ($pkg === $mainPkg) { $s = 6; continue; }
 		/* */ $s = 7; continue;
