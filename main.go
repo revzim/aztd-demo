@@ -99,7 +99,7 @@ func InitVueOpts(m *Model) *vue.Option {
 
 	o.AddComputed("footerHTML", func(vm *vue.ViewModel) interface{} {
 		return fmt.Sprintf(
-			`<a style="color: #fff; text-decoration: none;" href="%s">%s — <strong>REVZIM</strong></a>`,
+			`<a style="color: #fff; text-decoration: none;" target="_blank" href="%s">%s — <strong>REVZIM</strong></a>`,
 			vm.Data.Get("authorgit").String(), time.Now().Format("Mon Jan _2 2006"),
 		)
 	})

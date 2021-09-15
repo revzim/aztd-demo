@@ -25873,7 +25873,7 @@ $packages["main"] = (function() {
 			_arg = new $String($internalize(vm.Object.$data.authorgit, $String));
 			_r = $clone(time.Now(), time.Time).Format("Mon Jan _2 2006"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 			_arg$1 = new $String(_r);
-			_r$1 = fmt.Sprintf("<a style=\"color: #fff; text-decoration: none;\" href=\"%s\">%s \xE2\x80\x94 <strong>REVZIM</strong></a>", new sliceType$1([_arg, _arg$1])); /* */ $s = 2; case 2: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
+			_r$1 = fmt.Sprintf("<a style=\"color: #fff; text-decoration: none;\" target=\"_blank\" href=\"%s\">%s \xE2\x80\x94 <strong>REVZIM</strong></a>", new sliceType$1([_arg, _arg$1])); /* */ $s = 2; case 2: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
 			$24r = new $String(_r$1);
 			$s = 3; case 3: return $24r;
 			/* */ } return; } if ($f === undefined) { $f = { $blk: $b }; } $f.$24r = $24r; $f._arg = _arg; $f._arg$1 = _arg$1; $f._r = _r; $f._r$1 = _r$1; $f.vm = vm; $f.$s = $s; $f.$r = $r; return $f;
