@@ -30,8 +30,6 @@ type (
 )
 
 var (
-	Version = ""
-
 	AppVersions = map[string]string{
 		"v013b": "kgeu1w",
 		"v013a": "xs6kid",
@@ -44,6 +42,8 @@ var (
 		"v011b": "s0xirg",
 		"v011a": "khhfux",
 	}
+
+	AuthorGit = "https://github.com/revzim"
 
 	StreamableURL = "https://streamable.com/e"
 
@@ -59,7 +59,6 @@ func (m *Model) StreamSrcVersion(newVersion string) string {
 }
 
 func (m *Model) SwapVersion() {
-	// log.Println("version", m.Version, m.VersionKeys, m.VersionIdx)
 	m.Version = m.VersionKeys[m.VersionIdx]
 	slideIdxs := [2]int{}
 	slideIdxs[0] = (m.VersionsCount + (m.VersionIdx-m.VersionsCount)%m.VersionsCount) - 1
@@ -69,7 +68,6 @@ func (m *Model) SwapVersion() {
 		m.VersionKeys[slideIdxs[1]],
 	}
 	m.Slides = tmpSlides
-	// log.Printf("next: %s prev: %s", m.VersionKeys[slideIdxs[1]], m.VersionKeys[slideIdxs[0]])
 }
 
 func InitVuetify() *js.Object {
@@ -106,14 +104,13 @@ func InitVueOpts(m *Model) *vue.Option {
 		)
 	})
 
-	// o = o.Mixin(js.M{
-	// 	"vuetify": InitVuetify(),
-	// })
+	o = o.Mixin(js.M{
+		"vuetify": InitVuetify(),
+	})
 	return o
 }
 
 func main() {
-	// or as part of a structed object:
 	m := &Model{
 		Object: js.Global.Get("Object").New(),
 	}
@@ -123,7 +120,7 @@ func main() {
 	m.VersionIdx = 0
 	m.VersionKeys = make([]string, 0)
 	m.Slides = Slides
-	m.AuthorGit = "https://github.com/revzim"
+	m.AuthorGit = AuthorGit
 	m.Streamable = StreamableURL
 	for k := range m.Versions {
 		m.VersionKeys = append(m.VersionKeys, k)
@@ -140,7 +137,8 @@ func main() {
 
 	v.Object.Set("vuetify", m.Vuetify)
 
+	v.Mount("#app")
 	// vueApp := v.Mount("#app")
 
-	js.Global.Set("app", v)
+	// js.Global.Set("app", vueApp)
 }

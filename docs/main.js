@@ -25878,11 +25878,13 @@ $packages["main"] = (function() {
 			$s = 3; case 3: return $24r;
 			/* */ } return; } if ($f === undefined) { $f = { $blk: $b }; } $f.$24r = $24r; $f._arg = _arg; $f._arg$1 = _arg$1; $f._r = _r; $f._r$1 = _r$1; $f.vm = vm; $f.$s = $s; $f.$r = $r; return $f;
 		}), new sliceType$2([]));
+		o = o.Mixin($makeMap($String.keyFor, [{ k: "vuetify", v: new $jsObjectPtr(InitVuetify()) }]));
 		return o;
 	};
 	$pkg.InitVueOpts = InitVueOpts;
 	main = function() {
-		var _entry, _i, _keys, _ref, k, m, o, v;
+		var _entry, _i, _keys, _ref, k, m, o, v, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _entry = $f._entry; _i = $f._i; _keys = $f._keys; _ref = $f._ref; k = $f.k; m = $f.m; o = $f.o; v = $f.v; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		m = new Model.ptr(new ($global.Object)(), "", "", false, sliceType.nil, sliceType.nil, 0, 0, "", "", null);
 		m.Object.mountEl = $externalize("#app", $String);
 		m.Object.version = $externalize("", $String);
@@ -25890,7 +25892,7 @@ $packages["main"] = (function() {
 		m.Object.versionIdx = 0;
 		m.Object.versionKeys = $externalize($makeSlice(sliceType, 0), sliceType);
 		m.Object.slides = $externalize($pkg.Slides, sliceType);
-		m.Object.authorgit = $externalize("https://github.com/revzim", $String);
+		m.Object.authorgit = $externalize($pkg.AuthorGit, $String);
 		m.Object.streamable = $externalize($pkg.StreamableURL, $String);
 		_ref = $internalize(m.Object.versions, mapType);
 		_i = 0;
@@ -25912,7 +25914,9 @@ $packages["main"] = (function() {
 		o = InitVueOpts(m);
 		v = o.NewViewModel();
 		v.Object.vuetify = m.Object.vuetify;
-		$global.app = $externalize(v, ptrType);
+		v.Object.$mount($externalize("#app", $String));
+		$s = -1; return;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f._entry = _entry; $f._i = _i; $f._keys = _keys; $f._ref = _ref; $f.k = k; $f.m = m; $f.o = o; $f.v = v; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	ptrType$2.methods = [{prop: "UpdateVersion", name: "UpdateVersion", pkg: "", typ: $funcType([$String], [], false)}, {prop: "StreamSrcVersion", name: "StreamSrcVersion", pkg: "", typ: $funcType([$String], [$String], false)}, {prop: "SwapVersion", name: "SwapVersion", pkg: "", typ: $funcType([], [], false)}];
 	Model.init("", [{prop: "Object", name: "Object", embedded: true, exported: true, typ: ptrType$1, tag: ""}, {prop: "MountEl", name: "MountEl", embedded: false, exported: true, typ: $String, tag: "js:\"mountEl\""}, {prop: "Version", name: "Version", embedded: false, exported: true, typ: $String, tag: "js:\"version\""}, {prop: "Versions", name: "Versions", embedded: false, exported: true, typ: mapType, tag: "js:\"versions\""}, {prop: "Slides", name: "Slides", embedded: false, exported: true, typ: sliceType, tag: "js:\"slides\""}, {prop: "VersionKeys", name: "VersionKeys", embedded: false, exported: true, typ: sliceType, tag: "js:\"versionKeys\""}, {prop: "VersionsCount", name: "VersionsCount", embedded: false, exported: true, typ: $Int, tag: "js:\"versionsCount\""}, {prop: "VersionIdx", name: "VersionIdx", embedded: false, exported: true, typ: $Int, tag: "js:\"versionIdx\""}, {prop: "Streamable", name: "Streamable", embedded: false, exported: true, typ: $String, tag: "js:\"streamable\""}, {prop: "AuthorGit", name: "AuthorGit", embedded: false, exported: true, typ: $String, tag: "js:\"authorgit\""}, {prop: "Vuetify", name: "Vuetify", embedded: false, exported: true, typ: ptrType$1, tag: "js:\"vuetify\""}]);
@@ -25925,12 +25929,15 @@ $packages["main"] = (function() {
 		$r = strings.$init(); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = time.$init(); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$pkg.AppVersions = $makeMap($String.keyFor, [{ k: "v013b", v: "kgeu1w" }, { k: "v013a", v: "xs6kid" }, { k: "v012c", v: "2mhihr" }, { k: "v012b", v: "clrt9k" }, { k: "v012a", v: "l2a2vu" }, { k: "v011e", v: "clrt9k" }, { k: "v011d", v: "1uyyh4" }, { k: "v011c", v: "bzqbww" }, { k: "v011b", v: "s0xirg" }, { k: "v011a", v: "khhfux" }]);
+		$pkg.AuthorGit = "https://github.com/revzim";
 		$pkg.StreamableURL = "https://streamable.com/e";
 		$pkg.Slides = new sliceType(["PREV VERSION", "NEXT VERSION"]);
-		if ($pkg === $mainPkg) {
-			main();
+		/* */ if ($pkg === $mainPkg) { $s = 6; continue; }
+		/* */ $s = 7; continue;
+		/* if ($pkg === $mainPkg) { */ case 6:
+			$r = main(); /* */ $s = 8; case 8: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 			$mainFinished = true;
-		}
+		/* } */ case 7:
 		/* */ } return; } if ($f === undefined) { $f = { $blk: $init }; } $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.$init = $init;
