@@ -25831,13 +25831,21 @@ $packages["main"] = (function() {
 	};
 	Model.prototype.StreamSrcVersion = function(newVersion) { return this.$val.StreamSrcVersion(newVersion); };
 	Model.ptr.prototype.SwapVersion = function() {
-		var _r, _r$1, m, slideIdxs, tmpSlides, x, x$1, x$2, x$3, x$4, x$5;
+		var _i, _r, _r$1, _ref, i, m, slideIdxs, tmpSlides, x, x$1, x$2, x$3;
 		m = this;
 		m.Object.version = $externalize((x = $internalize(m.Object.versionKeys, sliceType), x$1 = $parseInt(m.Object.versionIdx) >> 0, ((x$1 < 0 || x$1 >= x.$length) ? ($throwRuntimeError("index out of range"), undefined) : x.$array[x.$offset + x$1])), $String);
 		slideIdxs = arrayType.zero();
 		slideIdxs[0] = (((($parseInt(m.Object.versionsCount) >> 0) + (_r = ((($parseInt(m.Object.versionIdx) >> 0) - ($parseInt(m.Object.versionsCount) >> 0) >> 0)) % ($parseInt(m.Object.versionsCount) >> 0), _r === _r ? _r : $throwRuntimeError("integer divide by zero")) >> 0)) - 1 >> 0);
 		slideIdxs[1] = (_r$1 = ((($parseInt(m.Object.versionIdx) >> 0) + 1 >> 0)) % ($parseInt(m.Object.versionsCount) >> 0), _r$1 === _r$1 ? _r$1 : $throwRuntimeError("integer divide by zero"));
-		tmpSlides = new sliceType([(x$2 = $internalize(m.Object.versionKeys, sliceType), x$3 = slideIdxs[0], ((x$3 < 0 || x$3 >= x$2.$length) ? ($throwRuntimeError("index out of range"), undefined) : x$2.$array[x$2.$offset + x$3])), (x$4 = $internalize(m.Object.versionKeys, sliceType), x$5 = slideIdxs[1], ((x$5 < 0 || x$5 >= x$4.$length) ? ($throwRuntimeError("index out of range"), undefined) : x$4.$array[x$4.$offset + x$5]))]);
+		tmpSlides = $makeSlice(sliceType, 2);
+		_ref = slideIdxs;
+		_i = 0;
+		while (true) {
+			if (!(_i < 2)) { break; }
+			i = _i;
+			((i < 0 || i >= tmpSlides.$length) ? ($throwRuntimeError("index out of range"), undefined) : tmpSlides.$array[tmpSlides.$offset + i] = (x$2 = $internalize(m.Object.versionKeys, sliceType), x$3 = ((i < 0 || i >= slideIdxs.length) ? ($throwRuntimeError("index out of range"), undefined) : slideIdxs[i]), ((x$3 < 0 || x$3 >= x$2.$length) ? ($throwRuntimeError("index out of range"), undefined) : x$2.$array[x$2.$offset + x$3])));
+			_i++;
+		}
 		m.Object.slides = $externalize(tmpSlides, sliceType);
 	};
 	Model.prototype.SwapVersion = function() { return this.$val.SwapVersion(); };

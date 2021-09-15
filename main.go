@@ -60,12 +60,13 @@ func (m *Model) StreamSrcVersion(newVersion string) string {
 
 func (m *Model) SwapVersion() {
 	m.Version = m.VersionKeys[m.VersionIdx]
-	slideIdxs := [2]int{}
+	const arrLen = 2
+	slideIdxs := [arrLen]int{}
 	slideIdxs[0] = (m.VersionsCount + (m.VersionIdx-m.VersionsCount)%m.VersionsCount) - 1
 	slideIdxs[1] = (m.VersionIdx + 1) % m.VersionsCount
-	tmpSlides := []string{
-		m.VersionKeys[slideIdxs[0]],
-		m.VersionKeys[slideIdxs[1]],
+	tmpSlides := make([]string, arrLen)
+	for i := range slideIdxs {
+		tmpSlides[i] = m.VersionKeys[slideIdxs[i]]
 	}
 	m.Slides = tmpSlides
 }
@@ -87,6 +88,7 @@ func InitVuetify() *js.Object {
 
 func InitVueOpts(m *Model) *vue.Option {
 	o := vue.NewOption()
+
 	o.SetDataWithMethods(m)
 
 	o.AddComputed("versionLabel", func(vm *vue.ViewModel) interface{} {
@@ -107,6 +109,7 @@ func InitVueOpts(m *Model) *vue.Option {
 	o = o.Mixin(js.M{
 		"vuetify": InitVuetify(),
 	})
+
 	return o
 }
 
@@ -138,7 +141,4 @@ func main() {
 	v.Object.Set("vuetify", m.Vuetify)
 
 	v.Mount("#app")
-	// vueApp := v.Mount("#app")
-
-	// js.Global.Set("app", vueApp)
 }
