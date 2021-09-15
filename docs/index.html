@@ -22,6 +22,9 @@
   ::-webkit-scrollbar {
     display: none;
   }
+  #vid-carousel > {
+    height: 100vh!important;
+  }
 </style>
 
 <body>
@@ -29,7 +32,7 @@
     <v-app>
       <v-main>
         <v-container class="text-center" fluid>
-          <v-carousel v-model="versionIdx" @change="SwapVersion" hide-delimiter-background show-arrows-on-hover>
+          <v-carousel v-model="versionIdx" @change="SwapVersion" hide-delimiter-background show-arrows-on-hover height="90vh">
             <template v-slot:prev="{ on, attrs }">
               <v-btn large color="warning" v-bind="attrs" v-on="on">{{ currentSlides[0] }}</v-btn>
             </template>
@@ -37,12 +40,10 @@
               <v-btn large color="primary" v-bind="attrs" v-on="on">{{ currentSlides[1] }}</v-btn>
             </template>
             <v-carousel-item v-for="(vidVersion, vidKey) in versions" :key="vidKey">
-              <v-sheet height="100%" tile>
-                <v-card class="fill-height" align="center" justify="center">
-                  <v-card-title class="justify-center">{{ versionLabel }}</v-card-title>
-                  <iframe id="iframe-inner" :src="StreamSrcVersion(vidKey)" frameborder="0" width="100%" height="100%"
-                    allowfullscreen></iframe>
-                </v-card>
+              <v-sheet height="100%">
+                <v-card-title class="justify-center">{{ versionLabel }}</v-card-title>
+                <iframe id="iframe-inner" :src="StreamSrcVersion(vidKey)" frameborder="0" width="100%" height="100%"
+                  allowfullscreen></iframe>
               </v-sheet>
             </v-carousel-item>
           </v-carousel>
