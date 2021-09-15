@@ -25,7 +25,6 @@ type (
 		VersionIdx    int               `js:"versionIdx"`
 		Streamable    string            `js:"streamable"`
 		AuthorGit     string            `js:"authorgit"`
-		Vuetify       *js.Object        `js:"vuetify"`
 	}
 )
 
@@ -136,13 +135,9 @@ func main() {
 
 	m.SwapVersion()
 
-	m.Vuetify = InitVuetify()
-
 	o := InitVueOpts(m)
 
 	v := o.NewViewModel()
-
-	v.Object.Set("vuetify", m.Vuetify)
 
 	v.Mount(VueAppMountElement)
 }
